@@ -1,0 +1,13 @@
+resourcePackages:
+  - com.example
+openAPI:
+  info:
+    version: '4.2'
+    title: The Thing App
+    description: 'The Thing App - API docs'
+    termsOfService: http://example.com
+    contact:
+      email: contact@example.com
+    license:
+      name: Apache 2.0
+      url: http://www.apache.org/licenses/LICENSE-2.0.html
