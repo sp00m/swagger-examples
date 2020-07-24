@@ -1,8 +1,11 @@
 package com.example;
 
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,6 +28,17 @@ public final class ThingController {
             @PathParam("id") @Parameter(description = "The thing id", required = true) int id
     ) {
         return thingService.findById(id);
+    }
+
+    @POST
+    @Path("/things")
+    @Consumes("application/json")
+    @Produces("application/json")
+    @ThingControllerCreate
+    public CompletableFuture<Thing> create(
+            @RequestBody(description = "The thing to create", required = true) TransientThing transientThing
+    ) {
+        return thingService.create(transientThing);
     }
 
 }

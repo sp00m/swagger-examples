@@ -15,4 +15,9 @@ public final class ThingController implements ThingControllerDocs {
         return thingService.findById(id);
     }
 
+    @Override
+    public CompletableFuture<Thing> create(TransientThing transientThing) {
+        return thingService.create(transientThing);
+    }
+
 }

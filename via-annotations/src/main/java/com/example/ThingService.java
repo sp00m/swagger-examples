@@ -6,4 +6,6 @@ public interface ThingService {
 
     CompletableFuture<Thing> findById(int id);
 
+    CompletableFuture<Thing> create(TransientThing transientThing);
+
 }

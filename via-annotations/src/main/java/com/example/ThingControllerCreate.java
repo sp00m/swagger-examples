@@ -12,14 +12,14 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Operation(
-        summary = "Finds a thing by id",
-        description = "Returns a thing",
+        summary = "Creates a new thing",
+        description = "Returns the created thing",
         responses = {
-                @ApiResponse(description = "The thing", content = @Content(schema = @Schema(implementation = Thing.class))),
-                @ApiResponse(responseCode = "404", description = "Thing not found")
+                @ApiResponse(description = "The created thing", content = @Content(schema = @Schema(implementation = Thing.class))),
+                @ApiResponse(responseCode = "400", description = "Invalid thing")
         }
 )
 @Target(METHOD)
 @Retention(RUNTIME)
-public @interface ThingControllerFindById {
+public @interface ThingControllerCreate {
 }
